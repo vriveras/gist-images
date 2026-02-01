@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <style>
+      .box { fill:#0b1220; stroke:#94a3b8; stroke-width:2; rx:12; }
+      .title { fill:#e5e7eb; font:600 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .text { fill:#e5e7eb; font:400 13px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .sub { fill:#cbd5e1; font:400 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .arrow { stroke:#60a5fa; stroke-width:2.5; fill:none; marker-end:url(#arrowHead); }
+      .arrow2 { stroke:#a78bfa; stroke-width:2.5; fill:none; marker-end:url(#arrowHead2); }
+    </style>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#60a5fa" />
+    </marker>
+    <marker id="arrowHead2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#a78bfa" />
+    </marker>
+  </defs>
+
+  <text x="40" y="40" class="title">Deterministic Retrieval Flow (Runtime)</text>
+  <text x="40" y="64" class="sub">The key: hooks run outside the model’s “intentions”, so retrieval steps can’t be skipped.</text>
+
+  <rect x="60" y="110" width="220" height="70" class="box" />
+  <text x="80" y="140" class="title">1) User asks</text>
+  <text x="80" y="162" class="text">"Where are we with X?"</text>
+
+  <rect x="320" y="110" width="240" height="70" class="box" />
+  <text x="340" y="140" class="title">2) Agent calls</text>
+  <text x="340" y="162" class="text">memory_search(query)</text>
+
+  <rect x="600" y="110" width="250" height="70" class="box" />
+  <text x="620" y="140" class="title">3) Semantic runs</text>
+  <text x="620" y="162" class="text">embeddings + BM25</text>
+
+  <rect x="890" y="110" width="250" height="70" class="box" />
+  <text x="910" y="140" class="title">4) Hook fires</text>
+  <text x="910" y="162" class="text">tool:memory_search:post</text>
+
+  <rect x="60" y="240" width="330" height="90" class="box" />
+  <text x="80" y="270" class="title">5) rlm-augment</text>
+  <text x="80" y="292" class="text">temporal_search.py</text>
+  <text x="80" y="314" class="sub">exact terms + dates + snippets</text>
+
+  <rect x="420" y="240" width="330" height="90" class="box" />
+  <text x="440" y="270" class="title">6) Merge results</text>
+  <text x="440" y="292" class="text">dedupe + indicators</text>
+  <text x="440" y="314" class="sub">🔮 semantic / 🔍 RLM / 🧠 both</text>
+
+  <rect x="780" y="240" width="360" height="90" class="box" />
+  <text x="800" y="270" class="title">7) Agent answers</text>
+  <text x="800" y="292" class="text">cites refs, no guessing</text>
+  <text x="800" y="314" class="sub">deterministic pipeline executed</text>
+
+  <!-- Index freshness -->
+  <rect x="60" y="380" width="520" height="90" class="box" />
+  <text x="80" y="410" class="title">Parallel: Index stays fresh</text>
+  <text x="80" y="432" class="text">session transcript appended → session:transcript:update</text>
+  <text x="80" y="454" class="sub">rlm-index-refresh runs index-sessions.py (debounced)</text>
+
+  <!-- Arrows -->
+  <path d="M280 145 L320 145" class="arrow" />
+  <path d="M560 145 L600 145" class="arrow" />
+  <path d="M850 145 L890 145" class="arrow" />
+
+  <path d="M1015 180 L225 240" class="arrow2" />
+  <path d="M390 285 L420 285" class="arrow" />
+  <path d="M750 285 L780 285" class="arrow" />
+
+</svg>
