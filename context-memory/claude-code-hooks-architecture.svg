@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <style>
+      .box { fill:#0b1220; stroke:#94a3b8; stroke-width:2; rx:12; }
+      .title { fill:#e5e7eb; font:600 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .text { fill:#e5e7eb; font:400 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .sub { fill:#cbd5e1; font:400 13px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .label { fill:#93c5fd; font:600 13px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .arrow { stroke:#60a5fa; stroke-width:2.5; fill:none; marker-end:url(#arrowHead); }
+      .arrow2 { stroke:#a78bfa; stroke-width:2.5; fill:none; marker-end:url(#arrowHead2); }
+      .arrow3 { stroke:#34d399; stroke-width:2.5; fill:none; marker-end:url(#arrowHead3); }
+    </style>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#60a5fa" />
+    </marker>
+    <marker id="arrowHead2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#a78bfa" />
+    </marker>
+    <marker id="arrowHead3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#34d399" />
+    </marker>
+  </defs>
+
+  <text x="40" y="46" class="title">Claude Code: RLM Retrieval Architecture (Tool Hooks)</text>
+  <text x="40" y="72" class="sub">Claude Code doesn’t have memory_search — so determinism comes from hooking tool events (Bash/Edit/Write/Stop).</text>
+
+  <rect x="60" y="120" width="260" height="110" class="box" />
+  <text x="80" y="155" class="title">Developer</text>
+  <text x="80" y="182" class="text">Works in a repo</text>
+  <text x="80" y="205" class="sub">(e.g., ChessRT)</text>
+
+  <rect x="360" y="120" width="360" height="140" class="box" />
+  <text x="380" y="155" class="title">Claude Code</text>
+  <text x="380" y="182" class="text">Tools: Bash / Edit / Write</text>
+  <text x="380" y="205" class="text">Project instructions: CLAUDE.md</text>
+  <text x="380" y="228" class="sub">(LLM can forget instructions — tools can’t)</text>
+
+  <rect x="760" y="120" width="390" height="140" class="box" />
+  <text x="780" y="155" class="title">Claude Code Hooks</text>
+  <text x="780" y="182" class="text">PreToolUse / PostToolUse / Stop</text>
+  <text x="780" y="205" class="text">Configured in ~/.claude/settings.json</text>
+  <text x="780" y="228" class="sub">Hook scripts run outside model intent</text>
+
+  <rect x="60" y="300" width="510" height="150" class="box" />
+  <text x="80" y="335" class="title">Raw Truth: Session JSONL</text>
+  <text x="80" y="362" class="text">~/.claude/projects/&lt;escaped-project-path&gt;/*.jsonl</text>
+  <text x="80" y="385" class="sub">Every message, tool call, and artifact metadata</text>
+
+  <rect x="610" y="300" width="540" height="150" class="box" />
+  <text x="630" y="335" class="title">Project-local Memory</text>
+  <text x="630" y="362" class="text">.claude-memory/sessions-index.json</text>
+  <text x="630" y="385" class="text">.claude-memory/transcripts/YYYY-MM-DD.md</text>
+  <text x="630" y="408" class="sub">Index + human-readable dump for compaction survival</text>
+
+  <rect x="60" y="500" width="1090" height="200" class="box" />
+  <text x="80" y="535" class="title">RLM Retrieval Skill (scripts)</text>
+  <text x="80" y="565" class="text">index-sessions.py  → build sessions-index.json (per project)</text>
+  <text x="80" y="590" class="text">dump_transcript.py → append markdown transcript snapshots</text>
+  <text x="80" y="615" class="text">temporal_search.py  → temporal + enhanced keyword matching</text>
+  <text x="80" y="640" class="sub">Debounced refresh helper: hook_index_refresh.py</text>
+
+  <!-- arrows -->
+  <path d="M320 175 L360 175" class="arrow" />
+  <text x="330" y="165" class="label">prompts</text>
+
+  <path d="M720 190 L760 190" class="arrow" />
+  <text x="725" y="180" class="label">tool events</text>
+
+  <path d="M540 260 L280 300" class="arrow3" />
+  <text x="330" y="285" class="label">writes JSONL</text>
+
+  <path d="M940 260 L880 300" class="arrow2" />
+  <text x="900" y="285" class="label">Stop/PostToolUse</text>
+
+  <path d="M300 450 L610 375" class="arrow" />
+  <text x="420" y="430" class="label">index + dump</text>
+
+  <path d="M900 450 L800 500" class="arrow2" />
+  <text x="830" y="485" class="label">runs scripts</text>
+</svg>
