@@ -1,0 +1,40 @@
+```mermaid
+flowchart TB
+    subgraph Input[" "]
+        Q[Query Arrives<br/>User asks for context]
+    end
+
+    subgraph Tier1["TIER 1: Inverted Index O(1)"]
+        T1_Stats["58,399 terms indexed<br/>132.59 MB on disk<br/>Lookup: ~0.01ms"]
+    end
+
+    subgraph Tier2["TIER 2: Coarse Filter O(k)"]
+        T2_Stats["Quick substring filter<br/>Top 40 candidates<br/>Time: 20-50ms"]
+    end
+
+    subgraph Tier3["TIER 3: Enhanced Matching"]
+        T3_Stats["Fuzzy + concept matching<br/>Top 20 candidates only<br/>Time: 50-100ms"]
+    end
+
+    subgraph Output[" "]
+        R[Results<br/>Matching sessions returned]
+    end
+
+    Q --> Tier1
+    
+    Tier1 -->|"HIT: 2.4ms"| R
+    Tier1 -->|miss| Tier2
+    
+    Tier2 -->|eliminate| R
+    Tier2 -->|continue| Tier3
+    
+    Tier3 --> R
+
+    style Tier1 fill:#2563EB,stroke:#1E40AF,stroke-width:3px,color:#fff
+    style Tier2 fill:#3B82F6,stroke:#2563EB,stroke-width:3px,color:#fff
+    style Tier3 fill:#7C3AED,stroke:#6D28D9,stroke-width:3px,color:#fff
+    style Q fill:#1E40AF,stroke:#1E3A8A,stroke-width:2px,color:#fff
+    style R fill:#14B8A6,stroke:#0D9488,stroke-width:2px,color:#fff
+    style Input fill:#F8FAFC,stroke:none
+    style Output fill:#F8FAFC,stroke:none
+```
