@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="white"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold">
+    (f) Match Quality Distribution on 4,000 Test Cases
+  </text>
+  
+  <!-- Horizontal bar segments -->
+  <!-- Exact Phrase: 59.7% -->
+  <rect x="80" y="100" width="358" height="60" fill="#27ae60" stroke="black" stroke-width="0.5"/>
+  <text x="258" y="135" text-anchor="middle" font-family="serif" font-size="14" font-weight="bold" fill="white">59.7%</text>
+  <text x="258" y="180" text-anchor="middle" font-family="serif" font-size="10">Exact Phrase</text>
+  <text x="258" y="195" text-anchor="middle" font-family="serif" font-size="9" fill="#666">2,388 cases</text>
+  
+  <!-- Substring: 23.4% -->
+  <rect x="438" y="100" width="140" height="60" fill="#2ecc71" stroke="black" stroke-width="0.5"/>
+  <text x="508" y="135" text-anchor="middle" font-family="serif" font-size="12" font-weight="bold" fill="white">23.4%</text>
+  <text x="508" y="180" text-anchor="middle" font-family="serif" font-size="10">Substring</text>
+  <text x="508" y="195" text-anchor="middle" font-family="serif" font-size="9" fill="#666">936 cases</text>
+  
+  <!-- Compound: 12.1% -->
+  <rect x="578" y="100" width="73" height="60" fill="#3498db" stroke="black" stroke-width="0.5"/>
+  <text x="614" y="135" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="white">12.1%</text>
+  <text x="614" y="180" text-anchor="middle" font-family="serif" font-size="10">Compound</text>
+  <text x="614" y="195" text-anchor="middle" font-family="serif" font-size="9" fill="#666">484 cases</text>
+  
+  <!-- Fuzzy/Concept: 4.8% -->
+  <rect x="651" y="100" width="29" height="60" fill="#9b59b6" stroke="black" stroke-width="0.5"/>
+  <text x="665" y="135" text-anchor="middle" font-family="serif" font-size="9" font-weight="bold" fill="white">4.8%</text>
+  <text x="665" y="180" text-anchor="middle" font-family="serif" font-size="9">Fuzzy/Concept</text>
+  <text x="665" y="192" text-anchor="middle" font-family="serif" font-size="8" fill="#666">192</text>
+  
+  <!-- Total bar outline -->
+  <rect x="80" y="100" width="600" height="60" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- Labels below -->
+  <text x="80" y="220" text-anchor="start" font-family="serif" font-size="9" fill="#27ae60" font-weight="bold">■ Exact Phrase</text>
+  <text x="200" y="220" text-anchor="start" font-family="serif" font-size="9" fill="#2ecc71">■ Substring</text>
+  <text x="300" y="220" text-anchor="start" font-family="serif" font-size="9" fill="#3498db">■ Compound</text>
+  <text x="400" y="220" text-anchor="start" font-family="serif" font-size="9" fill="#9b59b6">■ Fuzzy/Concept</text>
+  
+  <!-- Footer -->
+  <text x="400" y="370" text-anchor="middle" font-family="serif" font-size="10" fill="#666">
+    Four matching strategies combine for 99.8% recall | Hybrid RLM System
+  </text>
+</svg>

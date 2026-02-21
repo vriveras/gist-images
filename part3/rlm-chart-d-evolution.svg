@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+  <rect width="900" height="500" fill="white"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold">
+    (d) The Three-Phase Evolution: From 565ms to 15ms
+  </text>
+  
+  <!-- Timeline line -->
+  <line x1="100" y1="420" x2="800" y2="420" stroke="#333" stroke-width="2"/>
+  
+  <!-- Phase 1: Linear Scan -->
+  <circle cx="150" cy="420" r="8" fill="#c0392b" stroke="black" stroke-width="1"/>
+  <text x="150" y="445" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold">Phase 1</text>
+  <text x="150" y="460" text-anchor="middle" font-family="serif" font-size="9" fill="#666">Linear Scan</text>
+  
+  <!-- Phase 1 box -->
+  <rect x="80" y="150" width="140" height="200" fill="#fadbd8" stroke="#c0392b" stroke-width="1" rx="5"/>
+  <text x="150" y="175" text-anchor="middle" font-family="serif" font-size="12" font-weight="bold" fill="#c0392b">565 ms</text>
+  <text x="150" y="195" text-anchor="middle" font-family="serif" font-size="9">Median latency</text>
+  <text x="150" y="230" text-anchor="middle" font-family="serif" font-size="10">• Simple</text>
+  <text x="150" y="250" text-anchor="middle" font-family="serif" font-size="10">• Correct</text>
+  <text x="150" y="270" text-anchor="middle" font-family="serif" font-size="10">• Embarrassing</text>
+  <text x="150" y="300" text-anchor="middle" font-family="serif" font-size="9" fill="#666" font-style="italic">O(m) scan</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 220 250 L 280 250" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="250" y="240" text-anchor="middle" font-family="serif" font-size="9" fill="#27ae60" font-weight="bold">235x</text>
+  
+  <!-- Phase 2: Inverted Index -->
+  <circle cx="350" cy="420" r="8" fill="#e67e22" stroke="black" stroke-width="1"/>
+  <text x="350" y="445" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold">Phase 2</text>
+  <text x="350" y="460" text-anchor="middle" font-family="serif" font-size="9" fill="#666">Inverted Index</text>
+  
+  <!-- Phase 2 box -->
+  <rect x="280" y="150" width="140" height="200" fill="#fdebd0" stroke="#e67e22" stroke-width="1" rx="5"/>
+  <text x="350" y="175" text-anchor="middle" font-family="serif" font-size="12" font-weight="bold" fill="#e67e22">2.4 ms</text>
+  <text x="350" y="195" text-anchor="middle" font-family="serif" font-size="9">Median latency</text>
+  <text x="350" y="230" text-anchor="middle" font-family="serif" font-size="10">• 58,399 terms</text>
+  <text x="350" y="250" text-anchor="middle" font-family="serif" font-size="10">• 132.59 MB index</text>
+  <text x="350" y="270" text-anchor="middle" font-family="serif" font-size="10">• Still LLM-dep</text>
+  <text x="350" y="300" text-anchor="middle" font-family="serif" font-size="9" fill="#666" font-style="italic">Constant lookup</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 420 250 L 480 250" stroke="#333" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="450" y="240" text-anchor="middle" font-family="serif" font-size="9" fill="#27ae60" font-weight="bold">+67%</text>
+  
+  <!-- Phase 3: Deterministic -->
+  <circle cx="550" cy="420" r="8" fill="#27ae60" stroke="black" stroke-width="1"/>
+  <text x="550" y="445" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold">Phase 3</text>
+  <text x="550" y="460" text-anchor="middle" font-family="serif" font-size="9" fill="#666">Deterministic</text>
+  
+  <!-- Phase 3 box -->
+  <rect x="480" y="150" width="140" height="200" fill="#d5f4e6" stroke="#27ae60" stroke-width="1" rx="5"/>
+  <text x="550" y="175" text-anchor="middle" font-family="serif" font-size="12" font-weight="bold" fill="#27ae60">15 ms</text>
+  <text x="550" y="195" text-anchor="middle" font-family="serif" font-size="9">Median latency</text>
+  <text x="550" y="230" text-anchor="middle" font-family="serif" font-size="10">• 266 sessions</text>
+  <text x="550" y="250" text-anchor="middle" font-family="serif" font-size="10">• 67% token ↓</text>
+  <text x="550" y="270" text-anchor="middle" font-family="serif" font-size="10">• Zero LLM dep</text>
+  <text x="550" y="300" text-anchor="middle" font-family="serif" font-size="9" fill="#666" font-style="italic">Pipeline injection</text>
+  
+  <!-- Current state indicator -->
+  <rect x="680" y="200" width="120" height="100" fill="#eafaf1" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5" rx="5"/>
+  <text x="740" y="225" text-anchor="middle" font-family="serif" font-size="10" font-weight="bold" fill="#27ae60">CURRENT</text>
+  <text x="740" y="250" text-anchor="middle" font-family="serif" font-size="14" font-weight="bold">99.8%</text>
+  <text x="740" y="270" text-anchor="middle" font-family="serif" font-size="9">Accuracy</text>
+  <text x="740" y="290" text-anchor="middle" font-family="serif" font-size="9">94.7% hit rate</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Footer -->
+  <text x="450" y="490" text-anchor="middle" font-family="serif" font-size="10" fill="#666">
+    Evolution of the RLM Retrieval System | 266 sessions indexed | OpenClaw Fork
+  </text>
+</svg>
