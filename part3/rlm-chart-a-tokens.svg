@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="white"/>
+  <text x="400" y="30" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold">
+    (a) Token Efficiency by Retrieval Method
+  </text>
+  <text x="400" y="580" text-anchor="middle" font-family="serif" font-size="10" fill="#666">
+    RLM Retrieval System | OpenClaw Fork | Feature Branch: memory-search-hook
+  </text>
+  
+  <!-- Y-axis -->
+  <line x1="80" y1="50" x2="80" y2="520" stroke="#333" stroke-width="1"/>
+  <text x="30" y="300" text-anchor="middle" font-family="serif" font-size="12" transform="rotate(-90 30 300)">
+    Mean Tokens per Query
+  </text>
+  
+  <!-- X-axis -->
+  <line x1="80" y1="520" x2="750" y2="520" stroke="#333" stroke-width="1"/>
+  
+  <!-- Y-axis labels -->
+  <text x="70" y="525" text-anchor="end" font-family="serif" font-size="10">0</text>
+  <text x="70" y="425" text-anchor="end" font-family="serif" font-size="10">2,500</text>
+  <text x="70" y="325" text-anchor="end" font-family="serif" font-size="10">5,000</text>
+  <text x="70" y="225" text-anchor="end" font-family="serif" font-size="10">7,500</text>
+  <text x="70" y="125" text-anchor="end" font-family="serif" font-size="10">10,000</text>
+  
+  <!-- Grid lines -->
+  <line x1="80" y1="420" x2="750" y2="420" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="320" x2="750" y2="320" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="220" x2="750" y2="220" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="120" x2="750" y2="120" stroke="#ddd" stroke-width="0.5"/>
+  
+  <!-- Baseline bar -->
+  <rect x="120" y="110" width="100" height="410" fill="#c0392b" stroke="black" stroke-width="0.5" opacity="0.9"/>
+  <text x="170" y="100" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="#c0392b">8,500</text>
+  <text x="170" y="545" text-anchor="middle" font-family="serif" font-size="10">Baseline</text>
+  <text x="170" y="560" text-anchor="middle" font-family="serif" font-size="9" fill="#666">(Full Snippets)</text>
+  
+  <!-- Reference-First bar -->
+  <rect x="320" y="284" width="100" height="236" fill="#e67e22" stroke="black" stroke-width="0.5" opacity="0.9"/>
+  <text x="370" y="274" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="#e67e22">3,400</text>
+  <text x="370" y="295" text-anchor="middle" font-family="serif" font-size="9" fill="#27ae60">60% ↓</text>
+  <text x="370" y="545" text-anchor="middle" font-family="serif" font-size="10">Reference-First</text>
+  <text x="370" y="560" text-anchor="middle" font-family="serif" font-size="9" fill="#666">(RLM)</text>
+  
+  <!-- Deterministic bar -->
+  <rect x="520" y="302" width="100" height="218" fill="#27ae60" stroke="black" stroke-width="0.5" opacity="0.9"/>
+  <text x="570" y="292" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="#27ae60">2,800</text>
+  <text x="570" y="313" text-anchor="middle" font-family="serif" font-size="9" fill="#27ae60">67% ↓</text>
+  <text x="570" y="545" text-anchor="middle" font-family="serif" font-size="10">Deterministic</text>
+  <text x="570" y="560" text-anchor="middle" font-family="serif" font-size="9" fill="#666">(Pipeline Injection)</text>
+  
+  <!-- Baseline reference line -->
+  <line x1="80" y1="110" x2="750" y2="110" stroke="#c0392b" stroke-width="1" stroke-dasharray="5,5" opacity="0.3"/>
+
+</svg>

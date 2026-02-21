@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="white"/>
+  <text x="400" y="30" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold">
+    (c) Retrieval Accuracy Comparison (n=4,000)
+  </text>
+  <text x="400" y="580" text-anchor="middle" font-family="serif" font-size="10" fill="#666">
+    RLM Retrieval System | OpenClaw Fork | Feature Branch: memory-search-hook
+  </text>
+  
+  <!-- Legend -->
+  <rect x="520" y="70" width="15" height="15" fill="#c0392b" stroke="black" stroke-width="0.5"/>
+  <text x="545" y="82" font-family="serif" font-size="10">Semantic Only (85.0%)</text>
+  <rect x="520" y="95" width="15" height="15" fill="#27ae60" stroke="black" stroke-width="0.5"/>
+  <text x="545" y="107" font-family="serif" font-size="10">Hybrid RLM (99.8%)</text>
+  
+  <!-- Y-axis -->
+  <line x1="80" y1="50" x2="80" y2="520" stroke="#333" stroke-width="1"/>
+  <text x="30" y="300" text-anchor="middle" font-family="serif" font-size="12" transform="rotate(-90 30 300)">
+    Percentage of Queries (%)
+  </text>
+  
+  <!-- X-axis -->
+  <line x1="80" y1="520" x2="750" y2="520" stroke="#333" stroke-width="1"/>
+  
+  <!-- Grid lines -->
+  <line x1="80" y1="468" x2="750" y2="468" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="416" x2="750" y2="416" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="364" x2="750" y2="364" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="312" x2="750" y2="312" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="260" x2="750" y2="260" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="208" x2="750" y2="208" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="156" x2="750" y2="156" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="80" y1="104" x2="750" y2="104" stroke="#ddd" stroke-width="0.5"/>
+  
+  <!-- Y labels -->
+  <text x="70" y="525" text-anchor="end" font-family="serif" font-size="10">0</text>
+  <text x="70" y="105" text-anchor="end" font-family="serif" font-size="10">100</text>
+  
+  <!-- Category 1: Exact Matches -->
+  <rect x="120" y="286" width="70" height="234" fill="#c0392b" stroke="black" stroke-width="0.5"/>
+  <rect x="200" y="202" width="70" height="318" fill="#27ae60" stroke="black" stroke-width="0.5"/>
+  <text x="185" y="565" text-anchor="middle" font-family="serif" font-size="10">Exact Matches</text>
+  <text x="155" y="275" text-anchor="middle" font-family="serif" font-size="9" fill="white">45%</text>
+  <text x="235" y="192" text-anchor="middle" font-family="serif" font-size="9" fill="white">62%</text>
+  
+  <!-- Category 2: Near Matches -->
+  <rect x="320" y="338" width="70" height="182" fill="#c0392b" stroke="black" stroke-width="0.5"/>
+  <rect x="400" y="346" width="70" height="174" fill="#27ae60" stroke="black" stroke-width="0.5"/>
+  <text x="385" y="565" text-anchor="middle" font-family="serif" font-size="10">Near Matches</text>
+  <text x="355" y="327" text-anchor="middle" font-family="serif" font-size="9" fill="white">35%</text>
+  <text x="435" y="336" text-anchor="middle" font-family="serif" font-size="9" fill="white">33%</text>
+  
+  <!-- Category 3: Missed -->
+  <rect x="520" y="468" width="70" height="52" fill="#c0392b" stroke="black" stroke-width="0.5"/>
+  <rect x="600" y="490" width="70" height="30" fill="#27ae60" stroke="black" stroke-width="0.5"/>
+  <text x="585" y="565" text-anchor="middle" font-family="serif" font-size="10">Missed</text>
+  <text x="555" y="458" text-anchor="middle" font-family="serif" font-size="9" fill="white">8%</text>
+  <text x="635" y="480" text-anchor="middle" font-family="serif" font-size="9" fill="white">2%</text>
+  
+  <!-- Note -->
+  <text x="400" y="590" text-anchor="middle" font-family="serif" font-size="9" fill="#666" font-style="italic">
+    n = 4,000 test cases across 2000 diverse retrieval scenarios
+  </text>
+
+</svg>
